@@ -135,7 +135,7 @@ def __search(bot, key, site, message, method):
                 resp = rget(api)
                 search_results = resp.json()
                 if 'error' in search_results or search_results['total'] == 0:
-                    return editMessage(f"No result found for <i>{key}</i>\nTorrent Site:- <i>{SITES.get(site)}</i>", message)
+                    return editMessage(f"No result found for <i>{key}</i>\nTorrent Site:- <i>{SITES.get(site)}</i>\nTry Searching in https://1337x-to.pages.dev/", message)
                 msg = f"<b>Found {min(search_results['total'], TELEGRAPH_LIMIT)}</b>"
                 if method == 'apitrend':
                     msg += f" <b>trending result(s)\nTorrent Site:- <i>{SITES.get(site)}</i></b>"
@@ -160,7 +160,7 @@ def __search(bot, key, site, message, method):
             search_results = dict_search_results.results
             total_results = dict_search_results.total
             if total_results == 0:
-                return editMessage(f"No result found for <i>{key}</i>\nTorrent Site:- <i>{site.capitalize()}</i>", message)
+                return editMessage(f"No result found for <i>{key}</i>\nTorrent Site:- <i>{site.capitalize()}</i>\nTry Searching in https://1337x-to.pages.dev/", message)
             msg = f"<b>Found {min(total_results, TELEGRAPH_LIMIT)}</b>"
             msg += f" <b>result(s) for <i>{key}</i>\nTorrent Site:- <i>{site.capitalize()}</i></b>"
         link = __getResult(search_results, key, message, method)
@@ -200,7 +200,7 @@ def __search(bot, key, site, message, method):
                 resp = rget(api)
                 search_results = resp.json()
                 if 'error' in search_results or search_results['total'] == 0:
-                    return editMessage(f"No result found for <i>{key}</i>\nTorrent Site:- <i>{SITES.get(site)}</i>", message)
+                    return editMessage(f"No result found for <i>{key}</i>\nTorrent Site:- <i>{SITES.get(site)}</i>\n Try Searching in https://1337x-to.pages.dev/", message)
                 cap = f"<b>Found {search_results['total']}</b>"
                 if method == 'apitrend':
                     cap += f" <b>trending results\nTorrent Site:- <i>{SITES.get(site)}</i></b>"
@@ -225,7 +225,7 @@ def __search(bot, key, site, message, method):
             search_results = dict_search_results.results
             total_results = dict_search_results.total
             if total_results == 0:
-                return editMessage(f"No result found for <i>{key}</i>\nTorrent Site:- <i>{site.capitalize()}</i>", message)
+                return editMessage(f"No result found for <i>{key}</i>\nTorrent Site:- <i>{site.capitalize()}</i>\n Try Searching in https://1337x-to.pages.dev/", message)
             cap = f"<b>Found {total_results}</b>"
             cap += f" <b>results for <i>{key}</i>\nTorrent Site:- <i>{site.capitalize()}</i></b>"
         hmsg = __getResult(search_results, key, message, method)
